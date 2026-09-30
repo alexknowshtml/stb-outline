@@ -58,5 +58,10 @@ The point of all three is to keep editor chrome from overlapping or crowding the
 2. Keep the floating selection toolbar from covering the selection. In `app/editor/components/FloatingToolbar.tsx`, the position calculation uses `selectionBounds.top - menuHeight` with no gap. Add a gap, and place the toolbar below the selection when there's no room above.
 3. Add a permanent formatting toolbar on desktop. `app/editor/components/SelectionToolbar.tsx` already renders the toolbar as a fixed bottom bar on mobile while editing (`isMobileEditing`). Reusing that path on desktop is likely the smallest change. The bar must not cover document text either.
 
+**Before writing code**
+- Check whether a built-in setting already does it. Admins can change the logo, workspace name, accent color and accent text color, public-page branding and table-of-contents position under Settings → Details. Don't write code for those.
+- Keep goals 1–3 scoped to desktop. Mobile already has its own bottom toolbar, and it must keep working.
+- License: Outline is BSL 1.1. Modifying it and running it for STB's own wiki is allowed. Don't build anything that turns it into a document service for other people.
+
 **Production**
 The live wiki runs v1.10.1 on Andy's server behind Caddy, with Postgres 16 and Redis 7 in containers. Don't commit production config or secrets. Deploys go through Andy.
