@@ -206,3 +206,5 @@ yarn test:shared   # All shared code tests
 - Follow OWASP guidelines.
 - Never store sensitive data in plain text.
 - Use environment variables for secrets.
+
+**STB fork:** read `STB.md` first. Its rules override this file where they conflict.
